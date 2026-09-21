@@ -1,0 +1,15 @@
+{
+ "generado": "2026-09-21T12:19:25.985Z",
+ "archivos": [
+  "Tiempos trabajados_20260920113548_export.xlsx"
+ ],
+ "corte": {
+  "fecha": "2026-09-20",
+  "hora": "11:35"
+ },
+ "tolerancia": 10,
+ "umbralPropinaBajoPct": 60,
+ "semanas": [
+  "2026-09-14"
+ ]
+}

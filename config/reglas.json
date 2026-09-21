@@ -1,0 +1,23 @@
+{
+  "toleranciaAtrasoMin": 10,
+  "_toleranciaAtrasoMin": "Minutos de atraso a partir de los cuales el dia se marca en rojo. El adelanto nunca es rojo.",
+  "umbralSalidaMadrugadaHora": 4,
+  "_umbralSalidaMadrugadaHora": "Una marcacion anterior a esta hora se trata como salida del dia anterior, no como entrada. Evita el falso 'sin marcar' de los dias que cierran pasada la medianoche.",
+  "excluirTurnosPosterioresAlCorte": true,
+  "_excluirTurnosPosterioresAlCorte": "Si el export se genero a media jornada, los turnos que empiezan despues de esa hora salen como 's/d' y no entran al denominador del ratio.",
+  "contarDiaSinMarcarEnDenominador": true,
+  "_contarDiaSinMarcarEnDenominador": "true: un dia trabajado sin marcacion cuenta como dia con turno y resta en el ratio. false: se excluye.",
+  "umbralPropinaBajoPct": 60,
+  "_umbralPropinaBajoPct": "Ratio de propinas por debajo de este porcentaje se muestra en rojo.",
+  "areas": {
+    "servicio": {
+      "titulo": "Personal de servicio"
+    },
+    "cocina": {
+      "titulo": "Personal de cocina"
+    },
+    "omuh": {
+      "titulo": "Omuh"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "anc-asistencia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Control de asistencia Grupo ANC: cruza el export del biometrico con los horarios planificados",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:local": "node scripts/build.mjs --local",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "xlsx": "^0.18.5"
+  }
+}

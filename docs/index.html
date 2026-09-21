@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asistencia Grupo ANC</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Asistencia</h1>
+    <p class="meta" id="meta">Cargando…</p>
+  </div>
+  <label class="sel">Semana
+    <select id="semana"></select>
+  </label>
+</header>
+
+<nav class="tabs" id="tabs" role="tablist"></nav>
+
+<div class="leyenda">
+  <span><i class="sw sw-red"></i><span id="ley-red">Sin marcar o atraso &gt; 10 min</span></span>
+  <span>El valor pequeño es la hora programada</span>
+  <span><i class="sw sw-note"></i>Tiene nota, pasa el cursor</span>
+</div>
+
+<main>
+  <div class="wrap"><table class="tb" id="tabla"></table></div>
+  <p class="vacio" id="vacio" hidden>No hay datos para esta área en la semana elegida.</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
