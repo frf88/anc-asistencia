@@ -37,6 +37,7 @@
     switch (c.tipo) {
       case 'na': return `<td${attrs('lib')}>—</td>`;
       case 'libre': return `<td${attrs('lib')}>libre</td>`;
+      case 'ausencia': return `<td${attrs('lib')}>${esc(c.etiqueta)}</td>`;
       case 'libre_marco': return `<td${attrs('')}><div class="n">${c.marca}</div><div class="p">era libre</div></td>`;
       case 'sd': return `<td${attrs('')}><div class="p">s/d${c.prog ? ` · ${c.prog}` : ''}</div></td>`;
       case 'sin_marcar': return `<td${attrs('red')}><div class="rt">sin marcar</div>${prog}</td>`;

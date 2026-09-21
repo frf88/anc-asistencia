@@ -1,76 +1,74 @@
 import XLSX from 'xlsx';
 import path from 'node:path';
-import { aHHMM, aISO } from './tiempo.mjs';
 
-const RE_EMPLEADO = /Id del Empleado:\s*([^,]+),\s*Nombres:\s*([^,]+),\s*Departamento:\s*(.+)/i;
+// Formato "Marcaciones": una fila por cada vez que alguien pone la huella.
+// Columnas: ID del Empleado | Nombres | Hora de marcación | ...
+// No distingue entrada de salida; eso lo decide compute.mjs por el orden de las marcas.
 
-// El nombre del export trae la hora de generacion: "Tiempos trabajados_20260920113548_export.xlsx".
-// Los turnos que empiezan despues de esa hora ese mismo dia todavia no pudieron marcarse.
-export function corteDesdeNombre(nombreArchivo) {
-  const m = path.basename(nombreArchivo).match(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/);
+function normalizar(s) {
+  return String(s ?? '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+// Devuelve { fecha: 'YYYY-MM-DD', hora: 'HH:MM' }. Acepta serial de Excel o texto 'm/d/yy H:MM'.
+function aMarca(v) {
+  if (typeof v === 'number') {
+    // Se truncan los segundos, igual que el biometrico al mostrar la hora (15:36:40 -> 15:36).
+    const totalMin = Math.floor(v * 1440 + 1e-6);
+    const dia = Math.floor(totalMin / 1440);
+    const d = new Date(Date.UTC(1899, 11, 30) + dia * 86400000);
+    return { fecha: d.toISOString().slice(0, 10), hora: `${String(Math.floor((totalMin % 1440) / 60)).padStart(2, '0')}:${String(totalMin % 60).padStart(2, '0')}` };
+  }
+  const m = String(v ?? '').trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s+(\d{1,2}):(\d{2})/);
   if (!m) return null;
-  return { fecha: `${m[1]}-${m[2]}-${m[3]}`, hora: `${m[4]}:${m[5]}` };
+  const anio = m[3].length === 2 ? `20${m[3]}` : m[3];
+  return { fecha: `${anio}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`, hora: `${m[4].padStart(2, '0')}:${m[5]}` };
 }
 
-// Localiza las columnas por nombre. El export tiene dos columnas "Entrada" y dos "Salida":
-// las primeras son el turno de la plantilla del sistema, las que siguen a "Work day" son la marcacion real.
-function indices(cabecera) {
-  const norm = cabecera.map((c) => String(c ?? '').trim().toLowerCase());
-  const workDay = norm.indexOf('work day');
-  if (workDay < 0) throw new Error('Formato de export no reconocido: falta la columna "Work day"');
-  return {
-    fecha: norm.indexOf('fecha'),
-    entrada: norm.indexOf('entrada', workDay),
-    salida: norm.indexOf('salida', workDay),
-  };
-}
-
-export function parseBiometrico(rutaArchivo, nombreOriginal = rutaArchivo) {
+export function parseMarcaciones(rutaArchivo, nombreOriginal = rutaArchivo) {
   const wb = XLSX.readFile(rutaArchivo);
   const ws = wb.Sheets[wb.SheetNames[0]];
   const filas = XLSX.utils.sheet_to_json(ws, { header: 1, raw: true, defval: null });
 
+  const iCab = filas.findIndex((f) => f.some((c) => normalizar(c) === 'hora de marcacion'));
+  if (iCab < 0) throw new Error(`${path.basename(nombreOriginal)}: no tiene la columna "Hora de marcación"`);
+  const cab = filas[iCab].map(normalizar);
+  const col = {
+    id: cab.indexOf('id del empleado'),
+    nombre: cab.indexOf('nombres'),
+    marca: cab.indexOf('hora de marcacion'),
+  };
+
   const empleados = {};
-  let actual = null;
-  let col = null;
-
-  for (const fila of filas) {
-    const a = fila[0];
-    if (typeof a === 'string') {
-      const m = a.match(RE_EMPLEADO);
-      if (m) {
-        const id = m[1].trim();
-        actual = empleados[id] ??= { id, nombre: m[2].trim(), departamento: m[3].trim(), dias: {} };
-        continue;
-      }
-      if (a.trim().toLowerCase() === 'nombre de empresa') {
-        col = indices(fila);
-        continue;
-      }
-    }
-    if (!actual || !col) continue;
-    const fecha = aISO(fila[col.fecha]);
-    if (!fecha) continue;
-    (actual.dias[fecha] ??= []).push({
-      entrada: aHHMM(fila[col.entrada]),
-      salida: aHHMM(fila[col.salida]),
-    });
+  let ultima = null;
+  for (const fila of filas.slice(iCab + 1)) {
+    const id = fila[col.id];
+    const m = aMarca(fila[col.marca]);
+    if (id === null || id === undefined || !m) continue;
+    const e = empleados[String(id)] ??= { id: String(id), nombre: String(fila[col.nombre] ?? '').trim(), dias: {} };
+    (e.dias[m.fecha] ??= []).push(m.hora);
+    const ts = `${m.fecha} ${m.hora}`;
+    if (!ultima || ts > ultima) ultima = ts;
   }
-
-  return { archivo: path.basename(nombreOriginal), corte: corteDesdeNombre(nombreOriginal), empleados };
+  return {
+    archivo: path.basename(nombreOriginal),
+    // La ultima marca del archivo marca hasta donde hay datos: turnos posteriores todavia no pudieron marcarse.
+    corte: ultima ? { fecha: ultima.slice(0, 10), hora: ultima.slice(11) } : null,
+    empleados,
+  };
 }
 
-// Combina varios exports. Si dos cubren el mismo dia, gana el mas reciente (el que tiene el corte mas tardio).
-export function combinar(exports) {
-  const orden = [...exports].sort((x, y) =>
-    `${x.corte?.fecha ?? ''}${x.corte?.hora ?? ''}`.localeCompare(`${y.corte?.fecha ?? ''}${y.corte?.hora ?? ''}`));
+// Une varios archivos. Las marcaciones se suman (sin duplicar): subir dos archivos que se solapan no pierde nada.
+export function combinar(archivos) {
   const empleados = {};
-  for (const ex of orden) {
-    for (const [id, e] of Object.entries(ex.empleados)) {
-      const dst = empleados[id] ??= { id, nombre: e.nombre, departamento: e.departamento, dias: {} };
-      Object.assign(dst.dias, e.dias);
+  let corte = null;
+  for (const a of archivos) {
+    for (const [id, e] of Object.entries(a.empleados)) {
+      const dst = empleados[id] ??= { id, nombre: e.nombre, dias: {} };
+      for (const [fecha, marcas] of Object.entries(e.dias)) {
+        dst.dias[fecha] = [...new Set([...(dst.dias[fecha] ?? []), ...marcas])].sort();
+      }
     }
+    if (a.corte && (!corte || `${a.corte.fecha} ${a.corte.hora}` > `${corte.fecha} ${corte.hora}`)) corte = a.corte;
   }
-  const ultimo = orden.at(-1);
-  return { archivos: orden.map((e) => e.archivo), corte: ultimo?.corte ?? null, empleados };
+  return { archivos: archivos.map((a) => a.archivo), corte, empleados };
 }

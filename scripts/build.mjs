@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseBiometrico, combinar } from './lib/biometrico.mjs';
+import { parseMarcaciones, combinar } from './lib/biometrico.mjs';
 import { cargarHorarios } from './lib/horarios.mjs';
 import { calcularSemana, semanasConDatos } from './lib/compute.mjs';
 
@@ -36,7 +36,7 @@ async function main() {
   const reglas = leerJSON('config/reglas.json');
 
   const { auth, archivos } = await obtenerExports(args);
-  const bio = combinar(archivos.map((a) => parseBiometrico(a.ruta, a.nombre)));
+  const bio = combinar(archivos.map((a) => parseMarcaciones(a.ruta, a.nombre)));
   console.log(`Biométrico: ${bio.archivos.length} archivo(s), ${Object.keys(bio.empleados).length} empleados, corte ${bio.corte?.fecha} ${bio.corte?.hora}`);
 
   const horariosPorSemana = await cargarHorarios({

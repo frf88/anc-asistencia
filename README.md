@@ -7,10 +7,10 @@ Cruza el export semanal del biométrico con los horarios planificados y publica 
 
 ## Cómo funciona
 
-1. Cada semana alguien descarga el export del biométrico (`Tiempos trabajados_AAAAMMDDhhmmss_export.xlsx`)
-   y lo sube **sin renombrar** a la carpeta de Drive. El nombre trae la hora de corte y el sistema la usa.
+1. Cada semana alguien descarga del biométrico el reporte de **Marcaciones** (una fila por cada huella:
+   `ID del Empleado | Nombres | Hora de marcación | ...`) y lo sube a la carpeta de Drive. El nombre del archivo da igual.
 2. Los lunes, el workflow `.github/workflows/actualizar.yml` descarga todos los exports de la carpeta,
-   los combina (si dos cubren el mismo día gana el más reciente), cruza con los horarios y escribe
+   suma todas sus marcaciones (sin duplicar, así que solaparse no importa), cruza con los horarios y escribe
    `docs/data/`. También se puede correr a mano desde **Actions → Actualizar asistencia → Run workflow**.
 3. La página lee esos JSON. No tiene backend ni credenciales.
 
@@ -20,11 +20,13 @@ Cruza el export semanal del biométrico con los horarios planificados y publica 
 |---|---|---|
 | `toleranciaAtrasoMin` | 10 | Atraso mayor a esto = rojo. El adelanto nunca es rojo. |
 | `umbralSalidaMadrugadaHora` | 4 | Una marca antes de las 04:00 es la salida del día anterior, no una entrada. |
-| `excluirTurnosPosterioresAlCorte` | true | Turnos que empiezan después del corte del export salen como `s/d` y no cuentan. |
+| `excluirTurnosPosterioresAlCorte` | true | El corte es la última marca de los archivos. Turnos posteriores salen como `s/d` y no cuentan. |
 | `contarDiaSinMarcarEnDenominador` | true | Un día sin marcar resta en el ratio. |
 | `umbralPropinaBajoPct` | 60 | Ratio debajo de esto se muestra en rojo. |
 
-**Propinas** = días sin rojo ÷ días con turno. No cuentan: libres, `s/d`, días sin turno.
+**Entrada vs salida:** el biométrico no las distingue. Se descartan las marcas de madrugada y del resto la 1a, 3a, 5a... son entradas.
+
+**Propinas** = días sin rojo ÷ días con turno. No cuentan: libres, ausencias (BAJA, VACACIONES, COMPE), `s/d`, días sin turno.
 Si marcó en un día libre se muestra ("era libre") pero no suma ni resta.
 
 ## Configuración
@@ -33,7 +35,9 @@ Si marcó en un día libre se muestra ("era libre") pero no suma ni resta.
   El id es la clave: si alguien cambia de nombre en el cuadro, solo se edita aquí.
   Empleado nuevo = agregar una línea.
 - `config/horarios-manual.json` — horarios cargados a mano, **fuente activa** hasta definir el formato del Sheet.
-  Valores: `"14:00"`, `"LIBRE"`, `null` (sin turno), `"VAR:10:30|15:00|18:30"` (se asigna el turno más cercano a la marca).
+  Valores: `"14:00"`, `"LIBRE"`, `null` (sin turno), `"VAR:10:30|15:00|18:30"` (se asigna el turno más cercano a la marca), cualquier otro texto (`"BAJA"`, `"VACACIONES"`) = ausencia.
+
+Un área sin nadie en los archivos cargados no se publica hasta que suban su planilla.
 
 ### Pasar los horarios a Google Sheets
 
@@ -64,6 +68,6 @@ Si se prefiere mantener las grillas actuales, hay que escribir un adaptador por 
 
 ```bash
 npm install
-node scripts/build.mjs --local "ruta/al/export.xlsx"
+node scripts/build.mjs --local "ruta/Marcaciones.xlsx"
 npm run serve
 ```

@@ -1,39 +1,200 @@
 {
   "_comment": "Mapea el Id del Empleado del biometrico al nombre que usan los cuadros de horario. El id es la clave: los nombres cambian, los ids no.",
   "empleados": [
-    { "id": "29", "biometrico": "Angela",             "nombre": "Angie",     "area": "servicio" },
-    { "id": "3",  "biometrico": "Silvia",             "nombre": "Silvia",    "area": "servicio" },
-    { "id": "10", "biometrico": "Jorge",              "nombre": "Coqui",     "area": "servicio" },
-    { "id": "20", "biometrico": "Flor",               "nombre": "Flor",      "area": "servicio" },
-    { "id": "30", "biometrico": "Alejandro",          "nombre": "Alejandro", "area": "servicio" },
-    { "id": "38", "biometrico": "Matias",             "nombre": "Matias",    "area": "servicio" },
-    { "id": "43", "biometrico": "Alejandro Giovanni", "nombre": "Ale G",     "area": "servicio" },
-    { "id": "12", "biometrico": "Paola",              "nombre": "Paola",     "area": "servicio", "subarea": "Bar" },
-
-    { "id": "4",  "biometrico": "Diego Abdon",  "nombre": "Diego A",   "area": "cocina" },
-    { "id": "5",  "biometrico": "Reymundo",     "nombre": "Raymundo",  "area": "cocina" },
-    { "id": "14", "biometrico": "Alan",         "nombre": "Alan",      "area": "cocina" },
-    { "id": "23", "biometrico": "Diego",        "nombre": "Diego U",   "area": "cocina" },
-    { "id": "42", "biometrico": "Gladys Zulma", "nombre": "Gladis",    "area": "cocina" },
-    { "id": "19", "biometrico": "Edinson",      "nombre": "Edy",       "area": "cocina" },
-    { "id": "39", "biometrico": "Miguel",       "nombre": "Miguel",    "area": "cocina" },
-    { "id": "50", "biometrico": "Eleazar",      "nombre": "Eliazar",   "area": "cocina" },
-
-    { "id": "25", "biometrico": "Silvana",      "nombre": "Silvana",   "area": "omuh" },
-    { "id": "27", "biometrico": "Jessica",      "nombre": "Jessica",   "area": "omuh" },
-    { "id": "45", "biometrico": "Ema",          "nombre": "Ema",       "area": "omuh" },
-    { "id": "34", "biometrico": "Oscar Airton", "nombre": "Oscar",     "area": "omuh" },
-    { "id": "37", "biometrico": "Xiomara",      "nombre": "Xiomara",   "area": "omuh" },
-    { "id": "48", "biometrico": "Miguel",       "nombre": "Miguel O.", "area": "omuh" },
-    { "id": "49", "biometrico": "Alexandra",    "nombre": "Alexandra", "area": "omuh" },
-    { "id": "36", "biometrico": "Fernando",     "nombre": "Fernando",  "area": "omuh" },
-    { "id": "47", "biometrico": "Bacilia",      "nombre": "Bacilia",   "area": "omuh" },
-    { "id": "46", "biometrico": "Rodrigo",      "nombre": "Rodrigo",   "area": "omuh" },
-    { "id": "44", "biometrico": "Hugo David",   "nombre": "Hugo",      "area": "omuh" },
-    { "id": "35", "biometrico": "Jonathan",     "nombre": "Jonathan",  "area": "omuh" }
+    {
+      "id": "29",
+      "biometrico": "Angela",
+      "nombre": "Angie",
+      "area": "servicio"
+    },
+    {
+      "id": "3",
+      "biometrico": "Silvia",
+      "nombre": "Silvia",
+      "area": "servicio"
+    },
+    {
+      "id": "10",
+      "biometrico": "Jorge",
+      "nombre": "Coqui",
+      "area": "servicio"
+    },
+    {
+      "id": "20",
+      "biometrico": "Flor",
+      "nombre": "Flor",
+      "area": "servicio"
+    },
+    {
+      "id": "30",
+      "biometrico": "Alejandro",
+      "nombre": "Alejandro",
+      "area": "servicio"
+    },
+    {
+      "id": "38",
+      "biometrico": "Matias",
+      "nombre": "Matias",
+      "area": "servicio"
+    },
+    {
+      "id": "43",
+      "biometrico": "Alejandro Giovanni",
+      "nombre": "Ale G",
+      "area": "servicio"
+    },
+    {
+      "id": "12",
+      "biometrico": "Paola",
+      "nombre": "Paola",
+      "area": "servicio",
+      "subarea": "Bar"
+    },
+    {
+      "id": "4",
+      "biometrico": "Diego Abdon",
+      "nombre": "Diego A",
+      "area": "cocina"
+    },
+    {
+      "id": "5",
+      "biometrico": "Reymundo",
+      "nombre": "Raymundo",
+      "area": "cocina"
+    },
+    {
+      "id": "14",
+      "biometrico": "Alan",
+      "nombre": "Alan",
+      "area": "cocina"
+    },
+    {
+      "id": "23",
+      "biometrico": "Diego",
+      "nombre": "Diego U",
+      "area": "cocina"
+    },
+    {
+      "id": "42",
+      "biometrico": "Gladys Zulma",
+      "nombre": "Gladis",
+      "area": "cocina"
+    },
+    {
+      "id": "19",
+      "biometrico": "Edinson",
+      "nombre": "Edy",
+      "area": "cocina"
+    },
+    {
+      "id": "39",
+      "biometrico": "Miguel",
+      "nombre": "Miguel",
+      "area": "cocina"
+    },
+    {
+      "id": "50",
+      "biometrico": "Eleazar",
+      "nombre": "Eliazar",
+      "area": "cocina"
+    },
+    {
+      "id": "25",
+      "biometrico": "Silvana",
+      "nombre": "Silvana",
+      "area": "omuh"
+    },
+    {
+      "id": "9",
+      "biometrico": "Huascar Eduardo",
+      "nombre": "Huascar",
+      "area": "omuh"
+    },
+    {
+      "id": "27",
+      "biometrico": "Jessica",
+      "nombre": "Jessica",
+      "area": "omuh"
+    },
+    {
+      "id": "45",
+      "biometrico": "Ema",
+      "nombre": "Ema",
+      "area": "omuh"
+    },
+    {
+      "id": "34",
+      "biometrico": "Oscar Airton",
+      "nombre": "Oscar",
+      "area": "omuh"
+    },
+    {
+      "id": "37",
+      "biometrico": "Xiomara",
+      "nombre": "Xiomara",
+      "area": "omuh"
+    },
+    {
+      "id": "48",
+      "biometrico": "Miguel",
+      "nombre": "Miguel O.",
+      "area": "omuh"
+    },
+    {
+      "id": "49",
+      "biometrico": "Alexandra",
+      "nombre": "Alexandra",
+      "area": "omuh"
+    },
+    {
+      "id": "36",
+      "biometrico": "Fernando",
+      "nombre": "Fernando",
+      "area": "omuh"
+    },
+    {
+      "id": "47",
+      "biometrico": "Bacilia",
+      "nombre": "Bacilia",
+      "area": "omuh"
+    },
+    {
+      "id": "46",
+      "biometrico": "Rodrigo",
+      "nombre": "Rodrigo",
+      "area": "omuh"
+    },
+    {
+      "id": "6",
+      "biometrico": "Marcela",
+      "nombre": "Marcela",
+      "area": "omuh"
+    },
+    {
+      "id": "44",
+      "biometrico": "Hugo David",
+      "nombre": "Hugo",
+      "area": "omuh"
+    },
+    {
+      "id": "35",
+      "biometrico": "Jonathan",
+      "nombre": "Jonathan",
+      "area": "omuh"
+    }
   ],
   "_sin_mapear": {
     "_comment": "Existen en el biometrico pero todavia no estan en ningun cuadro de horario. Agregalos arriba cuando corresponda.",
-    "ids": ["13 Felisa", "15 Mauricio", "21 Shamira", "22 Catalina", "32 Claudia", "33 Gerardo", "26 John", "2 Maya", "31 Daniela"]
+    "ids": [
+      "13 Felisa",
+      "15 Mauricio",
+      "21 Shamira",
+      "22 Catalina",
+      "32 Claudia",
+      "33 Gerardo",
+      "26 John",
+      "2 Maya",
+      "31 Daniela"
+    ]
   }
 }

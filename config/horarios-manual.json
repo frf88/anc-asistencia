@@ -1,37 +1,277 @@
 {
-  "_comment": "Horarios cargados a mano mientras se define el formato del Google Sheet. Valores: 'HH:MM' = hora de entrada | 'LIBRE' | null = sin turno (local cerrado o no asignado) | 'VAR:10:30|15:00|18:30' = turno variable, se asigna el mas cercano a la marcacion.",
+  "_comment": "Horarios cargados a mano mientras se define el formato del Google Sheet. Valores: 'HH:MM' = hora de entrada | 'LIBRE' | 'BAJA' / 'VACACIONES' / 'COMPE' = ausencia, no cuenta | null = sin turno (local cerrado o no asignado) | 'VAR:10:30|15:00|18:30' = turno variable, se asigna el mas cercano a la marcacion.",
   "semanas": {
     "2026-09-14": {
-      "29": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "LIBRE", "sab": "10:30", "dom": "10:30" },
-      "3":  { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "10:30", "sab": "LIBRE", "dom": "10:30" },
-      "10": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "10:30", "sab": "10:30", "dom": "LIBRE" },
-      "20": { "lun": null, "mar": "14:00", "mie": "17:30", "jue": "17:30", "vie": "17:30", "sab": "15:00", "dom": "10:30" },
-      "30": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "LIBRE", "vie": "15:00", "sab": "10:30", "dom": "10:30" },
-      "38": { "lun": null, "mar": "17:30", "mie": "17:30", "jue": "17:30", "vie": "17:30", "sab": "17:30", "dom": "LIBRE" },
-      "43": { "lun": null, "mar": "LIBRE", "mie": "15:00", "jue": "15:00", "vie": "10:30", "sab": "10:30", "dom": "10:30" },
-      "12": { "lun": null, "mar": "14:00", "mie": "LIBRE", "jue": "15:00", "vie": "10:30", "sab": "10:30", "dom": "10:30" },
-
-      "4":  { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "LIBRE", "dom": "10:30" },
-      "5":  { "lun": null, "mar": "LIBRE", "mie": "15:00", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "VAR:10:30|15:00|18:30", "dom": "10:30" },
-      "14": { "lun": null, "mar": "14:00", "mie": "LIBRE", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "VAR:10:30|15:00|18:30", "dom": "10:30" },
-      "23": { "lun": null, "mar": "14:00", "mie": "LIBRE", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "VAR:10:30|15:00|18:30", "dom": "10:30" },
-      "42": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "VAR:10:30|15:00|18:30", "dom": "LIBRE" },
-      "19": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "LIBRE", "dom": "10:30" },
-      "39": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "VAR:10:30|15:00|18:30", "sab": "VAR:10:30|15:00|18:30", "dom": "LIBRE" },
-      "50": { "lun": null, "mar": "14:00", "mie": "15:00", "jue": "15:00", "vie": "LIBRE", "sab": "VAR:10:30|15:00|18:30", "dom": "10:30" },
-
-      "25": { "lun": "15:30", "mar": "14:30", "mie": "14:30", "jue": "14:30", "vie": "14:30", "sab": "12:00", "dom": "LIBRE" },
-      "27": { "lun": "LIBRE", "mar": "LIBRE", "mie": "14:30", "jue": "14:30", "vie": "14:30", "sab": "13:00", "dom": "13:00" },
-      "45": { "lun": "16:30", "mar": "LIBRE", "mie": "LIBRE", "jue": "14:30", "vie": "11:00", "sab": "13:00", "dom": "11:00" },
-      "34": { "lun": "10:00", "mar": "LIBRE", "mie": "LIBRE", "jue": "10:00", "vie": "10:00", "sab": "10:00", "dom": "10:00" },
-      "37": { "lun": "10:00", "mar": "10:00", "mie": "LIBRE", "jue": "10:00", "vie": "LIBRE", "sab": "10:00", "dom": "10:00" },
-      "48": { "lun": "15:30", "mar": "14:30", "mie": "14:30", "jue": "14:30", "vie": "LIBRE", "sab": "LIBRE", "dom": "13:00" },
-      "49": { "lun": "LIBRE", "mar": "LIBRE", "mie": "11:00", "jue": "15:30", "vie": "15:30", "sab": "11:00", "dom": "13:00" },
-      "36": { "lun": null, "mar": null, "mie": null, "jue": null, "vie": null, "sab": "11:00", "dom": "10:00" },
-      "47": { "lun": "17:00", "mar": "17:00", "mie": "LIBRE", "jue": "17:00", "vie": "17:00", "sab": "13:00", "dom": "13:00" },
-      "46": { "lun": "08:00", "mar": "08:00", "mie": "08:00", "jue": "08:00", "vie": "08:00", "sab": "LIBRE", "dom": "LIBRE" },
-      "44": { "lun": "08:00", "mar": "08:00", "mie": "08:00", "jue": "08:00", "vie": "08:00", "sab": "LIBRE", "dom": "LIBRE" },
-      "35": { "lun": "08:00", "mar": "08:00", "mie": "08:00", "jue": "08:00", "vie": "08:00", "sab": "LIBRE", "dom": "LIBRE" }
+      "3": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "10:30",
+        "sab": "LIBRE",
+        "dom": "10:30"
+      },
+      "4": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "LIBRE",
+        "dom": "10:30"
+      },
+      "5": {
+        "lun": null,
+        "mar": "LIBRE",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "10:30"
+      },
+      "6": {
+        "lun": "LIBRE",
+        "mar": "BAJA",
+        "mie": "14:30",
+        "jue": "14:30",
+        "vie": "14:30",
+        "sab": "08:00",
+        "dom": "LIBRE"
+      },
+      "9": {
+        "lun": "LIBRE",
+        "mar": "10:00",
+        "mie": "10:00",
+        "jue": "10:00",
+        "vie": "10:00",
+        "sab": "10:00",
+        "dom": "LIBRE"
+      },
+      "10": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "10:30",
+        "sab": "10:30",
+        "dom": "LIBRE"
+      },
+      "12": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "LIBRE",
+        "jue": "15:00",
+        "vie": "10:30",
+        "sab": "10:30",
+        "dom": "10:30"
+      },
+      "14": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "LIBRE",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "10:30"
+      },
+      "19": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "LIBRE",
+        "dom": "10:30"
+      },
+      "20": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "17:30",
+        "jue": "17:30",
+        "vie": "17:30",
+        "sab": "15:00",
+        "dom": "10:30"
+      },
+      "23": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "LIBRE",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "10:30"
+      },
+      "25": {
+        "lun": "15:30",
+        "mar": "14:30",
+        "mie": "14:30",
+        "jue": "14:30",
+        "vie": "14:30",
+        "sab": "12:00",
+        "dom": "LIBRE"
+      },
+      "27": {
+        "lun": "LIBRE",
+        "mar": "LIBRE",
+        "mie": "14:30",
+        "jue": "14:30",
+        "vie": "14:30",
+        "sab": "13:00",
+        "dom": "13:00"
+      },
+      "29": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "LIBRE",
+        "sab": "10:30",
+        "dom": "10:30"
+      },
+      "30": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "LIBRE",
+        "vie": "15:00",
+        "sab": "10:30",
+        "dom": "10:30"
+      },
+      "34": {
+        "lun": "10:00",
+        "mar": "LIBRE",
+        "mie": "LIBRE",
+        "jue": "10:00",
+        "vie": "10:00",
+        "sab": "10:00",
+        "dom": "10:00"
+      },
+      "35": {
+        "lun": "08:00",
+        "mar": "08:00",
+        "mie": "08:00",
+        "jue": "08:00",
+        "vie": "08:00",
+        "sab": "LIBRE",
+        "dom": "LIBRE"
+      },
+      "36": {
+        "lun": null,
+        "mar": null,
+        "mie": null,
+        "jue": null,
+        "vie": null,
+        "sab": "11:00",
+        "dom": "10:00"
+      },
+      "37": {
+        "lun": "10:00",
+        "mar": "10:00",
+        "mie": "LIBRE",
+        "jue": "10:00",
+        "vie": "LIBRE",
+        "sab": "10:00",
+        "dom": "10:00"
+      },
+      "38": {
+        "lun": null,
+        "mar": "17:30",
+        "mie": "17:30",
+        "jue": "17:30",
+        "vie": "17:30",
+        "sab": "17:30",
+        "dom": "LIBRE"
+      },
+      "39": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "LIBRE"
+      },
+      "42": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "VAR:10:30|15:00|18:30",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "LIBRE"
+      },
+      "43": {
+        "lun": null,
+        "mar": "LIBRE",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "10:30",
+        "sab": "10:30",
+        "dom": "10:30"
+      },
+      "44": {
+        "lun": "08:00",
+        "mar": "08:00",
+        "mie": "08:00",
+        "jue": "08:00",
+        "vie": "08:00",
+        "sab": "LIBRE",
+        "dom": "LIBRE"
+      },
+      "45": {
+        "lun": "16:30",
+        "mar": "LIBRE",
+        "mie": "LIBRE",
+        "jue": "14:30",
+        "vie": "11:00",
+        "sab": "13:00",
+        "dom": "11:00"
+      },
+      "46": {
+        "lun": "08:00",
+        "mar": "08:00",
+        "mie": "08:00",
+        "jue": "08:00",
+        "vie": "08:00",
+        "sab": "LIBRE",
+        "dom": "LIBRE"
+      },
+      "47": {
+        "lun": "17:00",
+        "mar": "17:00",
+        "mie": "LIBRE",
+        "jue": "17:00",
+        "vie": "17:00",
+        "sab": "13:00",
+        "dom": "13:00"
+      },
+      "48": {
+        "lun": "15:30",
+        "mar": "14:30",
+        "mie": "14:30",
+        "jue": "14:30",
+        "vie": "LIBRE",
+        "sab": "LIBRE",
+        "dom": "13:00"
+      },
+      "49": {
+        "lun": "LIBRE",
+        "mar": "LIBRE",
+        "mie": "11:00",
+        "jue": "15:30",
+        "vie": "15:30",
+        "sab": "11:00",
+        "dom": "13:00"
+      },
+      "50": {
+        "lun": null,
+        "mar": "14:00",
+        "mie": "15:00",
+        "jue": "15:00",
+        "vie": "LIBRE",
+        "sab": "VAR:10:30|15:00|18:30",
+        "dom": "10:30"
+      }
     }
   }
 }
