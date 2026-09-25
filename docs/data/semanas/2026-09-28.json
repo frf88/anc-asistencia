@@ -1,0 +1,779 @@
+{
+ "semana": "2026-09-28",
+ "fechas": [
+  "2026-09-28",
+  "2026-09-29",
+  "2026-09-30",
+  "2026-10-01",
+  "2026-10-02",
+  "2026-10-03",
+  "2026-10-04"
+ ],
+ "dias": [
+  "lun",
+  "mar",
+  "mie",
+  "jue",
+  "vie",
+  "sab",
+  "dom"
+ ],
+ "corte": null,
+ "areas": [
+  {
+   "area": "omuh",
+   "titulo": "Omuh",
+   "visibles": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "filas": [
+    {
+     "id": "25",
+     "nombre": "S",
+     "subarea": "Servicio",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "9",
+     "nombre": "Hua",
+     "subarea": "Cocina",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "27",
+     "nombre": "Je",
+     "subarea": "Servicio",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "45",
+     "nombre": "E",
+     "subarea": "Cocina",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "34",
+     "nombre": "O",
+     "subarea": "Cocina",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "11:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "37",
+     "nombre": "X",
+     "subarea": "Servicio",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "48",
+     "nombre": "MO",
+     "subarea": "Cocina",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "49",
+     "nombre": "A",
+     "subarea": "Servicio",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "13:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "36",
+     "nombre": "F",
+     "subarea": "Cocina",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "11:00",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "47",
+     "nombre": "B",
+     "subarea": "Limpieza",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "16:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "16:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "16:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "16:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "13:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "sd",
+       "prog": "13:00",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "46",
+     "nombre": "R",
+     "subarea": "Producción",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "6",
+     "nombre": "M",
+     "subarea": "Producción",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "14:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "14:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "14:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "14:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "sd",
+       "prog": "08:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "44",
+     "nombre": "Hug",
+     "subarea": "Producción",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    },
+    {
+     "id": "35",
+     "nombre": "Jo",
+     "subarea": "Producción",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-28",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-29",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-30",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-01",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-02",
+       "tipo": "sd",
+       "prog": "08:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-03",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-10-04",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 0,
+      "pct": null
+     }
+    }
+   ]
+  }
+ ]
+}

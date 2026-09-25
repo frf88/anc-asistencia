@@ -33,8 +33,9 @@ function evaluarDia({ prog, marcas, fecha, corte, reglas }) {
   const opciones = prog.startsWith('VAR:') ? prog.slice(4).split('|') : null;
   const hora = opciones ? (entradas.length ? masCercano(opciones, entradas[0]) : null) : prog;
 
-  if (corte && (fecha > corte.fecha || (fecha === corte.fecha && reglas.excluirTurnosPosterioresAlCorte
-      && (hora === null || aMin(hora) > aMin(corte.hora))))) {
+  // Sin biometrico, o despues del corte: todavia no se sabe si marco.
+  if (!corte || fecha > corte.fecha || (fecha === corte.fecha && reglas.excluirTurnosPosterioresAlCorte
+      && (hora === null || aMin(hora) > aMin(corte.hora)))) {
     return { tipo: 'sd', prog: hora, notas };
   }
   if (!entradas.length) return { tipo: 'sin_marcar', prog: hora, notas };
@@ -50,7 +51,33 @@ function evaluarDia({ prog, marcas, fecha, corte, reglas }) {
   };
 }
 
+// Iniciales para publicar sin nombres (el repo y la pagina son publicos).
+// Se arman con el nombre del cuadro de horarios, unicas dentro de cada area; si dos coinciden
+// se alarga la primera palabra (Je / Jo).
+// Un campo "iniciales" en empleados.json manda sobre lo calculado.
+export function asignarIniciales(empleados) {
+  const palabras = (e) => String(e.nombre || e.biometrico).trim().split(/\s+/).filter(Boolean);
+  const armar = (e, n) => {
+    const [p, ...r] = palabras(e);
+    return p.charAt(0).toUpperCase() + p.slice(1, n).toLowerCase() + r.map((w) => w[0].toUpperCase()).join('');
+  };
+  const res = {};
+  const largo = Object.fromEntries(empleados.map((e) => [e.id, 1]));
+  for (let vuelta = 0; vuelta < 8; vuelta += 1) {
+    const grupos = {};
+    for (const e of empleados) {
+      res[e.id] = e.iniciales ?? armar(e, largo[e.id]);
+      (grupos[`${e.area}|${res[e.id]}`] ??= []).push(e);
+    }
+    const choques = Object.values(grupos).filter((g) => g.length > 1 && g.some((e) => !e.iniciales));
+    if (!choques.length) break;
+    choques.flat().forEach((e) => { largo[e.id] += 1; });
+  }
+  return res;
+}
+
 export function calcularSemana({ semana, empleados, horarios, bio, reglas }) {
+  const iniciales = asignarIniciales(empleados);
   const fechas = DIAS.map((_, i) => sumarDias(semana, i));
   const porArea = {};
 
@@ -76,16 +103,16 @@ export function calcularSemana({ semana, empleados, horarios, bio, reglas }) {
     const den = cuentan.length;
 
     (porArea[emp.area] ??= []).push({
-      id: emp.id, nombre: emp.nombre, subarea: emp.subarea ?? null,
+      id: emp.id, nombre: iniciales[emp.id], subarea: emp.subarea ?? null,
       enBiometrico: emp.id in bio.empleados,
       celdas,
       ratio: { num, den, pct: den ? Math.round((num / den) * 100) : null },
     });
   }
 
-  // Un area sin ninguna persona en los archivos cargados no se publica: todavia no subieron su planilla.
+  // Solo aparecen las areas que tienen planilla de horarios cargada para la semana.
   const areas = Object.entries(porArea)
-    .filter(([, filas]) => filas.some((f) => f.enBiometrico))
+    .filter(([, filas]) => filas.length)
     .map(([area, filas]) => ({
       area,
       titulo: reglas.areas[area]?.titulo ?? area,

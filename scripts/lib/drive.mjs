@@ -44,6 +44,16 @@ export async function descargar(auth, archivo, carpetaDestino) {
   return { ruta: destino, nombre };
 }
 
+// Baja un archivo (xlsx subido a Drive o Google Sheet nativo) como buffer xlsx.
+export async function descargarBuffer(auth, fileId) {
+  const drive = google.drive({ version: 'v3', auth });
+  const { data: meta } = await drive.files.get({ fileId, fields: 'mimeType', supportsAllDrives: true });
+  const res = meta.mimeType === GSHEET_MIME
+    ? await drive.files.export({ fileId, mimeType: XLSX_MIME }, { responseType: 'arraybuffer' })
+    : await drive.files.get({ fileId, alt: 'media', supportsAllDrives: true }, { responseType: 'arraybuffer' });
+  return Buffer.from(res.data);
+}
+
 export async function leerRango(auth, spreadsheetId, rango) {
   const sheets = google.sheets({ version: 'v4', auth });
   const { data } = await sheets.spreadsheets.values.get({ spreadsheetId, range: rango });
