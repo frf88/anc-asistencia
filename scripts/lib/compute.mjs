@@ -53,7 +53,7 @@ function evaluarDia({ prog, dia, fecha, corte, reglas }) {
   };
 }
 
-// Iniciales para publicar sin nombres (el repo y la pagina son publicos).
+// Iniciales, por si se quiere publicar sin nombres (regla mostrarNombresCompletos: false).
 // Se arman con el nombre del cuadro de horarios, unicas dentro de cada area; si dos coinciden
 // se alarga la primera palabra (Je / Jo).
 // Un campo "iniciales" en empleados.json manda sobre lo calculado.
@@ -79,7 +79,9 @@ export function asignarIniciales(empleados) {
 }
 
 export function calcularSemana({ semana, empleados, horarios, bio, reglas }) {
-  const iniciales = asignarIniciales(empleados);
+  const etiqueta = reglas.mostrarNombresCompletos
+    ? Object.fromEntries(empleados.map((e) => [e.id, e.nombre]))
+    : asignarIniciales(empleados);
   const fechas = DIAS.map((_, i) => sumarDias(semana, i));
   const porArea = {};
 
@@ -105,7 +107,7 @@ export function calcularSemana({ semana, empleados, horarios, bio, reglas }) {
     const den = cuentan.length;
 
     (porArea[emp.area] ??= []).push({
-      id: emp.id, nombre: iniciales[emp.id], subarea: emp.subarea ?? null,
+      id: emp.id, nombre: etiqueta[emp.id], subarea: emp.subarea ?? null,
       enBiometrico: emp.id in bio.empleados,
       celdas,
       ratio: { num, den, pct: den ? Math.round((num / den) * 100) : null },

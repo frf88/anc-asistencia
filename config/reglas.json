@@ -9,6 +9,8 @@
   "_contarDiaSinMarcarEnDenominador": "true: un dia trabajado sin marcacion cuenta como dia con turno y resta en el ratio. false: se excluye.",
   "umbralPropinaBajoPct": 60,
   "_umbralPropinaBajoPct": "Ratio de propinas por debajo de este porcentaje se muestra en rojo.",
+  "mostrarNombresCompletos": true,
+  "_mostrarNombresCompletos": "true: la pagina muestra el nombre. false: solo iniciales (la pagina y el repo son publicos).",
   "areas": {
     "servicio": {
       "titulo": "Personal de servicio"
