@@ -8,17 +8,19 @@ function masCercano(opciones, marca) {
   return opciones.reduce((best, o) => (Math.abs(aMin(o) - m) < Math.abs(aMin(best) - m) ? o : best));
 }
 
-// Las marcas no dicen si son entrada o salida. Se descartan las de madrugada (salida del dia anterior)
-// y del resto se toman como entradas la 1a, 3a, 5a... (entrada, salida, entrada, salida).
-function separar(marcas, reglas) {
+// Si el reporte ya separa entradas de salidas se usan esas; si no (Marcaciones), se toman como
+// entradas la 1a, 3a, 5a... Las marcas de madrugada son la salida del dia anterior y no cuentan.
+function separar(dia, reglas) {
   const umbral = reglas.umbralSalidaMadrugadaHora * 60;
-  const madrugada = marcas.filter((t) => aMin(t) < umbral);
-  const resto = marcas.filter((t) => aMin(t) >= umbral).sort();
+  const temprana = (t) => aMin(t) < umbral;
+  const madrugada = dia.marcas.filter(temprana);
+  if (dia.entradas) return { madrugada, entradas: dia.entradas.filter((t) => !temprana(t)) };
+  const resto = dia.marcas.filter((t) => !temprana(t)).sort();
   return { madrugada, entradas: resto.filter((_, i) => i % 2 === 0) };
 }
 
-function evaluarDia({ prog, marcas, fecha, corte, reglas }) {
-  const { madrugada, entradas } = separar(marcas, reglas);
+function evaluarDia({ prog, dia, fecha, corte, reglas }) {
+  const { madrugada, entradas } = separar(dia, reglas);
   const notas = madrugada.length ? [`${madrugada[0]} es la salida del día anterior`] : [];
 
   if (prog === null || prog === undefined) return { tipo: 'na', notas };
@@ -87,7 +89,7 @@ export function calcularSemana({ semana, empleados, horarios, bio, reglas }) {
     const dias = bio.empleados[emp.id]?.dias ?? {};
     const celdas = DIAS.map((d, i) => ({
       fecha: fechas[i],
-      ...evaluarDia({ prog: h[d], marcas: dias[fechas[i]] ?? [], fecha: fechas[i], corte: bio.corte, reglas }),
+      ...evaluarDia({ prog: h[d], dia: dias[fechas[i]] ?? { marcas: [], entradas: null }, fecha: fechas[i], corte: bio.corte, reglas }),
     }));
 
     // La marca de madrugada del dia i es la salida del dia i-1: se anota tambien en el dia anterior.
