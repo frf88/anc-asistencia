@@ -30,8 +30,8 @@ jobs:
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           BIOMETRICO_FOLDER_ID: ${{ vars.BIOMETRICO_FOLDER_ID }}
-          HORARIOS_FUENTE: ${{ vars.HORARIOS_FUENTE || 'manual' }}
-          HORARIOS_SHEET_ID: ${{ vars.HORARIOS_SHEET_ID }}
+          HORARIOS_FUENTE: ${{ vars.HORARIOS_FUENTE || 'grilla' }}
+          HORARIOS_FUENTES: ${{ secrets.HORARIOS_FUENTES }}
         run: npm run build
 
       - name: Publicar datos
