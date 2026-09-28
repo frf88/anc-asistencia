@@ -29,17 +29,37 @@ function iso(v) {
   return m ? `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}` : null;
 }
 
-function fechaHora(v) {
+// Los reportes vienen con la fecha en dia/mes o en mes/dia segun de donde se exporten.
+// El orden se detecta mirando todas las fechas de la hoja: si alguna parte pasa de 12, ya no hay duda.
+function ordenFechas(valores) {
+  let dmy = false;
+  let mdy = false;
+  for (const v of valores) {
+    if (typeof v === 'number') continue;
+    const m = String(v ?? '').trim().match(/^(\d{1,2})\/(\d{1,2})\//);
+    if (!m) continue;
+    if (Number(m[1]) > 12) dmy = true;
+    if (Number(m[2]) > 12) mdy = true;
+  }
+  if (dmy && mdy) throw new Error('las fechas del reporte mezclan dia/mes con mes/dia');
+  return mdy ? 'mdy' : 'dmy';
+}
+
+function fechaHora(v, orden = 'dmy') {
   if (typeof v === 'number') {
     const total = Math.floor(v * 1440 + 1e-6);
     const d = new Date(Date.UTC(1899, 11, 30) + Math.floor(total / 1440) * 86400000);
     const min = total % 1440;
-    return { fecha: d.toISOString().slice(0, 10), hora: `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}` };
+    return {
+      fecha: d.toISOString().slice(0, 10),
+      hora: `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`,
+    };
   }
   const m = String(v ?? '').trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s+(\d{1,2}):(\d{2})/);
   if (!m) return null;
-  const a = m[3].length === 2 ? `20${m[3]}` : m[3];
-  return { fecha: `${a}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`, hora: `${m[4].padStart(2, '0')}:${m[5]}` };
+  const anio = m[3].length === 2 ? `20${m[3]}` : m[3];
+  const [dia, mes] = orden === 'mdy' ? [m[2], m[1]] : [m[1], m[2]];
+  return { fecha: `${anio}-${mes.padStart(2, '0')}-${dia.padStart(2, '0')}`, hora: `${m[4].padStart(2, '0')}:${m[5]}` };
 }
 
 const agregar = (emp, fecha) => (emp.dias[fecha] ??= { marcas: [], entradas: null });
@@ -48,19 +68,37 @@ function hojas(wb) {
   return wb.SheetNames.map((n) => XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, raw: true, defval: null }));
 }
 
-function esMarcaciones(filas) {
-  return filas.some((f) => f.some((c) => norm(c) === 'hora de marcacion'));
+// Cabecera de "Marcaciones". Hay dos variantes: una columna "Hora de marcación" con fecha y hora
+// juntas, u otra con "Fecha" y "Hora" separadas. La cabecera no siempre esta en la primera fila.
+function cabeceraMarcaciones(filas) {
+  const i = filas.findIndex((f) => f.some((c) => norm(c) === 'id del empleado'));
+  if (i < 0) return null;
+  const cab = filas[i].map(norm);
+  const col = {
+    fila: i,
+    id: cab.indexOf('id del empleado'),
+    nombre: cab.indexOf('nombres'),
+    marca: cab.indexOf('hora de marcacion'),
+    fecha: cab.indexOf('fecha'),
+    hora: cab.indexOf('hora'),
+  };
+  if (col.marca < 0 && (col.fecha < 0 || col.hora < 0)) return null;
+  return col;
 }
 
-function leerMarcaciones(filas, empleados) {
-  const iCab = filas.findIndex((f) => f.some((c) => norm(c) === 'hora de marcacion'));
-  const cab = filas[iCab].map(norm);
-  const col = { id: cab.indexOf('id del empleado'), nombre: cab.indexOf('nombres'), marca: cab.indexOf('hora de marcacion') };
-  for (const f of filas.slice(iCab + 1)) {
+function leerMarcaciones(filas, col, empleados) {
+  const datos = filas.slice(col.fila + 1).filter((f) => {
     const id = f[col.id];
-    const m = fechaHora(f[col.marca]);
-    if (id === null || id === undefined || !m) continue;
-    const e = empleados[String(id)] ??= { id: String(id), nombre: String(f[col.nombre] ?? '').trim(), dias: {} };
+    return id !== null && id !== undefined && String(id).trim() !== '';
+  });
+  const orden = ordenFechas(datos.map((f) => (col.marca >= 0 ? f[col.marca] : f[col.fecha])));
+  for (const f of datos) {
+    const m = col.marca >= 0
+      ? fechaHora(f[col.marca], orden)
+      : fechaHora(`${f[col.fecha]} ${f[col.hora]}`, orden);
+    if (!m) continue;
+    const clave = String(f[col.id]).trim();
+    const e = empleados[clave] ??= { id: clave, nombre: String(f[col.nombre] ?? '').trim(), dias: {} };
     agregar(e, m.fecha).marcas.push(m.hora);
   }
 }
@@ -100,8 +138,11 @@ export function parseBiometrico(rutaArchivo, nombreOriginal = rutaArchivo) {
   const empleados = {};
   let formato = null;
   for (const filas of hojas(XLSX.readFile(rutaArchivo))) {
-    if (esMarcaciones(filas)) { leerMarcaciones(filas, empleados); formato ??= 'marcaciones'; }
-    else { leerTiempos(filas, empleados); formato ??= 'tiempos'; }
+    if (filas.some((f) => f.some((c) => norm(c) === 'work day'))) {
+      leerTiempos(filas, empleados); formato ??= 'tiempos'; continue;
+    }
+    const col = cabeceraMarcaciones(filas);
+    if (col) { leerMarcaciones(filas, col, empleados); formato ??= 'marcaciones'; }
   }
   if (!Object.keys(empleados).length) {
     throw new Error(`${path.basename(nombreOriginal)}: no se reconoce el formato (ni "Marcaciones" ni "Tiempos trabajados")`);
