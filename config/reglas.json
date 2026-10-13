@@ -1,6 +1,6 @@
 {
   "toleranciaAtrasoMin": 10,
-  "_toleranciaAtrasoMin": "Minutos de atraso a partir de los cuales el dia se marca en rojo. El adelanto nunca es rojo.",
+  "_toleranciaAtrasoMin": "Minutos de atraso a partir de los cuales el dia se marca en rojo, inclusive: 10 ya cuenta como tarde. El adelanto nunca es rojo.",
   "umbralSalidaMadrugadaHora": 4,
   "_umbralSalidaMadrugadaHora": "Una marcacion anterior a esta hora se trata como salida del dia anterior, no como entrada. Evita el falso 'sin marcar' de los dias que cierran pasada la medianoche.",
   "excluirTurnosPosterioresAlCorte": true,

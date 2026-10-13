@@ -1,10 +1,15 @@
 {
- "generado": "2026-09-24T23:17:56.880Z",
- "archivos": 0,
- "corte": null,
+ "generado": "2026-10-05T22:23:15.840Z",
+ "archivos": 1,
+ "corte": {
+  "fecha": "2026-10-05",
+  "hora": "18:16"
+ },
  "tolerancia": 10,
  "umbralPropinaBajoPct": 60,
  "semanas": [
-  "2026-09-28"
+  "2026-09-28",
+  "2026-09-21",
+  "2026-09-14"
  ]
 }

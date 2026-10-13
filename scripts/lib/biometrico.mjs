@@ -134,6 +134,40 @@ function leerTiempos(filas, empleados) {
   }
 }
 
+// Variante por bloques: cada empleado abre con "Id del Empleado: N,Nombres: X" y debajo
+// una cabecera con las columnas Fecha y Hora. Una fila por huella.
+function leerMarcacionesPorBloques(filas, empleados) {
+  let emp = null;
+  let col = null;
+  const pend = [];
+  for (const f of filas) {
+    const a = f[0];
+    if (typeof a === 'string') {
+      const m = a.match(RE_EMPLEADO);
+      if (m) {
+        const id = m[1].trim();
+        emp = empleados[id] ??= { id, nombre: m[2].trim(), dias: {} };
+        continue;
+      }
+      const cab = f.map(norm);
+      if (cab.includes('fecha') && cab.includes('hora')) {
+        col = { fecha: cab.indexOf('fecha'), hora: cab.indexOf('hora') };
+        continue;
+      }
+    }
+    if (!emp || !col) continue;
+    if (f[col.fecha] === null || f[col.fecha] === undefined || String(f[col.fecha]).trim() === '') continue;
+    pend.push({ emp, fecha: f[col.fecha], hora: f[col.hora] });
+  }
+  if (!pend.length) return false;
+  const orden = ordenFechas(pend.map((x) => x.fecha));
+  for (const x of pend) {
+    const m = fechaHora(`${x.fecha} ${x.hora}`, orden);
+    if (m) agregar(x.emp, m.fecha).marcas.push(m.hora);
+  }
+  return true;
+}
+
 export function parseBiometrico(rutaArchivo, nombreOriginal = rutaArchivo) {
   const empleados = {};
   let formato = null;
@@ -142,7 +176,8 @@ export function parseBiometrico(rutaArchivo, nombreOriginal = rutaArchivo) {
       leerTiempos(filas, empleados); formato ??= 'tiempos'; continue;
     }
     const col = cabeceraMarcaciones(filas);
-    if (col) { leerMarcaciones(filas, col, empleados); formato ??= 'marcaciones'; }
+    if (col) { leerMarcaciones(filas, col, empleados); formato ??= 'marcaciones'; continue; }
+    if (leerMarcacionesPorBloques(filas, empleados)) formato ??= 'marcaciones';
   }
   if (!Object.keys(empleados).length) {
     throw new Error(`${path.basename(nombreOriginal)}: no se reconoce el formato (ni "Marcaciones" ni "Tiempos trabajados")`);

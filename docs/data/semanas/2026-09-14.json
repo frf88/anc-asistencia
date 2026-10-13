@@ -19,13 +19,892 @@
   "dom"
  ],
  "corte": {
-  "fecha": "2026-09-21",
-  "hora": "14:32"
+  "fecha": "2026-10-05",
+  "hora": "18:16"
  },
  "areas": [
   {
+   "area": "servicio",
+   "titulo": "Personal de servicio",
+   "visibles": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "filas": [
+    {
+     "id": "29",
+     "nombre": "Angie",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "3",
+     "nombre": "Silvia",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "10",
+     "nombre": "Coqui",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "20",
+     "nombre": "Flor",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 6,
+      "pct": 0
+     }
+    },
+    {
+     "id": "30",
+     "nombre": "Alejandro",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "38",
+     "nombre": "Matias",
+     "subarea": null,
+     "enBiometrico": true,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "17:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "43",
+     "nombre": "Ale G",
+     "subarea": null,
+     "enBiometrico": true,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "12",
+     "nombre": "Paola",
+     "subarea": "Bar",
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    }
+   ]
+  },
+  {
+   "area": "cocina",
+   "titulo": "Personal de cocina",
+   "visibles": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "filas": [
+    {
+     "id": "4",
+     "nombre": "Diego A",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "5",
+     "nombre": "Raymundo",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "14",
+     "nombre": "Alan",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "23",
+     "nombre": "Diego U",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "42",
+     "nombre": "Gladis",
+     "subarea": null,
+     "enBiometrico": true,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "19",
+     "nombre": "Edy",
+     "subarea": null,
+     "enBiometrico": false,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "39",
+     "nombre": "Miguel",
+     "subarea": null,
+     "enBiometrico": true,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "libre",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    },
+    {
+     "id": "50",
+     "nombre": "Eliazar",
+     "subarea": null,
+     "enBiometrico": true,
+     "celdas": [
+      {
+       "fecha": "2026-09-14",
+       "tipo": "na",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-15",
+       "tipo": "sin_marcar",
+       "prog": "14:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-16",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-17",
+       "tipo": "sin_marcar",
+       "prog": "15:00",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-18",
+       "tipo": "libre",
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-19",
+       "tipo": "sin_marcar",
+       "prog": null,
+       "notas": []
+      },
+      {
+       "fecha": "2026-09-20",
+       "tipo": "sin_marcar",
+       "prog": "10:30",
+       "notas": []
+      }
+     ],
+     "ratio": {
+      "num": 0,
+      "den": 5,
+      "pct": 0
+     }
+    }
+   ]
+  },
+  {
    "area": "omuh",
-   "titulo": "Omuh",
+   "titulo": "omuH",
    "visibles": [
     true,
     true,
@@ -44,60 +923,38 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "15:30",
-       "marca": "15:36",
-       "delta": 6,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:33",
-       "delta": 3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:35",
-       "delta": 5,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:36",
-       "delta": 6,
-       "extras": [],
-       "notas": [
-        "salió pasada la medianoche"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:39",
-       "delta": 9,
-       "extras": [],
-       "notas": [
-        "00:32 es la salida del día anterior"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "12:00",
-       "marca": "12:10",
-       "delta": 10,
-       "extras": [],
        "notas": []
       },
       {
@@ -107,9 +964,9 @@
       }
      ],
      "ratio": {
-      "num": 6,
+      "num": 0,
       "den": 6,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -125,47 +982,32 @@
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:00",
-       "delta": 0,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "09:56",
-       "delta": -4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "09:55",
-       "delta": -5,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:04",
-       "delta": 4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "09:56",
-       "delta": -4,
-       "extras": [],
        "notas": []
       },
       {
@@ -175,9 +1017,9 @@
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -198,54 +1040,39 @@
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:28",
-       "delta": -2,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:27",
-       "delta": -3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:32",
-       "delta": 2,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "13:00",
-       "delta": 0,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "12:59",
-       "delta": -1,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -256,11 +1083,8 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "16:30",
-       "marca": "16:31",
-       "delta": 1,
-       "extras": [],
        "notas": []
       },
       {
@@ -275,49 +1099,33 @@
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:30",
-       "delta": 0,
-       "extras": [],
-       "notas": [
-        "salió pasada la medianoche"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "11:00",
-       "marca": "10:57",
-       "delta": -3,
-       "extras": [],
-       "notas": [
-        "00:31 es la salida del día anterior"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "13:04",
-       "delta": 4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "11:00",
-       "marca": "11:00",
-       "delta": 0,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -328,11 +1136,8 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:24",
-       "delta": 24,
-       "extras": [],
        "notas": []
       },
       {
@@ -347,49 +1152,33 @@
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:14",
-       "delta": 14,
-       "extras": [],
-       "notas": [
-        "salió pasada la medianoche"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:17",
-       "delta": 17,
-       "extras": [],
-       "notas": [
-        "00:19 es la salida del día anterior"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:36",
-       "delta": 36,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:05",
-       "delta": 5,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 1,
+      "num": 0,
       "den": 5,
-      "pct": 20
+      "pct": 0
      }
     },
     {
@@ -400,20 +1189,14 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:03",
-       "delta": 3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:07",
-       "delta": 7,
-       "extras": [],
        "notas": []
       },
       {
@@ -423,45 +1206,32 @@
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:01",
-       "delta": 1,
-       "extras": [],
-       "notas": [
-        "salió pasada la medianoche"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-18",
        "tipo": "libre",
-       "notas": [
-        "00:19 es la salida del día anterior"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:01",
-       "delta": 1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "10:06",
-       "delta": 6,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -472,38 +1242,26 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "15:30",
-       "marca": "15:30",
-       "delta": 0,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:27",
-       "delta": -3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:27",
-       "delta": -3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:27",
-       "delta": -3,
-       "extras": [],
        "notas": []
       },
       {
@@ -518,18 +1276,15 @@
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "12:57",
-       "delta": -3,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -550,58 +1305,39 @@
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "11:00",
-       "marca": "10:45",
-       "delta": -15,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "15:30",
-       "marca": "15:36",
-       "delta": 6,
-       "extras": [],
-       "notas": [
-        "salió pasada la medianoche"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "15:30",
-       "marca": "15:22",
-       "delta": -8,
-       "extras": [],
-       "notas": [
-        "00:19 es la salida del día anterior"
-       ]
+       "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "11:00",
-       "marca": "11:07",
-       "delta": 7,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "12:54",
-       "delta": -6,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -637,20 +1373,14 @@
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "11:00",
-       "marca": "11:18",
-       "delta": 18,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "tarde",
+       "tipo": "sin_marcar",
        "prog": "10:00",
-       "marca": "11:08",
-       "delta": 68,
-       "extras": [],
        "notas": []
       }
      ],
@@ -668,20 +1398,14 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "17:00",
-       "marca": "16:49",
-       "delta": -11,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "17:00",
-       "marca": "17:03",
-       "delta": 3,
-       "extras": [],
        "notas": []
       },
       {
@@ -691,45 +1415,33 @@
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "17:00",
-       "marca": "16:59",
-       "delta": -1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "17:00",
-       "marca": "16:56",
-       "delta": -4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "13:01",
-       "delta": 1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-20",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "13:00",
-       "marca": "13:00",
-       "delta": 0,
-       "extras": [],
        "notas": []
       }
      ],
      "ratio": {
-      "num": 6,
+      "num": 0,
       "den": 6,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -740,47 +1452,32 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:57",
-       "delta": -3,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:51",
-       "delta": -9,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:55",
-       "delta": -5,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:55",
-       "delta": -5,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "08:09",
-       "delta": 9,
-       "extras": [],
        "notas": []
       },
       {
@@ -795,9 +1492,9 @@
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -825,29 +1522,20 @@
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:30",
-       "delta": 0,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "14:30",
-       "marca": "14:31",
-       "delta": 1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-19",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "08:00",
-       "delta": 0,
-       "extras": [],
        "notas": []
       },
       {
@@ -857,9 +1545,9 @@
       }
      ],
      "ratio": {
-      "num": 3,
+      "num": 0,
       "den": 4,
-      "pct": 75
+      "pct": 0
      }
     },
     {
@@ -870,47 +1558,32 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:59",
-       "delta": -1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:51",
-       "delta": -9,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:49",
-       "delta": -11,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:56",
-       "delta": -4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "08:09",
-       "delta": 9,
-       "extras": [],
        "notas": []
       },
       {
@@ -925,9 +1598,9 @@
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     },
     {
@@ -938,47 +1611,32 @@
      "celdas": [
       {
        "fecha": "2026-09-14",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:59",
-       "delta": -1,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-15",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:55",
-       "delta": -5,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-16",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:56",
-       "delta": -4,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-17",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "07:54",
-       "delta": -6,
-       "extras": [],
        "notas": []
       },
       {
        "fecha": "2026-09-18",
-       "tipo": "ok",
+       "tipo": "sin_marcar",
        "prog": "08:00",
-       "marca": "08:09",
-       "delta": 9,
-       "extras": [],
        "notas": []
       },
       {
@@ -993,9 +1651,9 @@
       }
      ],
      "ratio": {
-      "num": 5,
+      "num": 0,
       "den": 5,
-      "pct": 100
+      "pct": 0
      }
     }
    ]

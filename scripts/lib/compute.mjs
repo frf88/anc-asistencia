@@ -48,7 +48,7 @@ function evaluarDia({ prog, dia, fecha, corte, reglas }) {
     return { marca: t, delta: ref ? aMin(t) - aMin(ref) : null };
   });
   return {
-    tipo: delta > reglas.toleranciaAtrasoMin ? 'tarde' : 'ok',
+    tipo: delta >= reglas.toleranciaAtrasoMin ? 'tarde' : 'ok',
     prog: hora, marca: entradas[0], delta, extras, notas,
   };
 }
