@@ -141,18 +141,6 @@
       "area": "omuh"
     },
     {
-      "id": "49",
-      "biometrico": "Alexandra",
-      "nombre": "Alexandra",
-      "area": "omuh"
-    },
-    {
-      "id": "36",
-      "biometrico": "Fernando",
-      "nombre": "Fernando",
-      "area": "omuh"
-    },
-    {
       "id": "47",
       "biometrico": "Bacilia",
       "nombre": "Bacilia",
@@ -195,6 +183,23 @@
       "26 John",
       "2 Maya",
       "31 Daniela"
+    ]
+  },
+  "_bajas": {
+    "_comment": "Ya no trabajan en la empresa. Se mantienen aqui para no reasignar sus ids por error.",
+    "empleados": [
+      {
+        "id": "49",
+        "nombre": "Alexandra",
+        "area": "omuh",
+        "hasta": "2026-10"
+      },
+      {
+        "id": "36",
+        "nombre": "Fernando",
+        "area": "omuh",
+        "hasta": "2026-10"
+      }
     ]
   }
 }
