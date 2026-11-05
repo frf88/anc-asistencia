@@ -1,0 +1,299 @@
+/* Paleta tomada de ancestralbolivia.com */
+:root {
+  --crema: #faf6f1;
+  --papel: #ffffff;
+  --tinta: #4a2e1b;
+  --cafe: #6b4a30;
+  --terracota: #c97b4a;
+  --suave: #9a8a7c;
+  --linea: #ece2d7;
+  --linea-fuerte: #ddcfc0;
+
+  /* estados */
+  --rojo: #f2d2c8;
+  --rojo-t: #8e3118;
+  --rojo-b: #c25a37;
+  --amarillo: #f7ead0;
+  --amarillo-t: #7d5a16;
+  --amarillo-b: #d6a940;
+  --marron: #6b4a30;
+  --marron-t: #faf6f1;
+  --ok: #4a6b3a;
+}
+
+/* Tema omuH. Colores sacados del isologotipo y de las aplicaciones de marca;
+   tipografías tomadas del manual (OMUH MANUAL.pdf). */
+body.omuh {
+  --crema: #ffffff;       /* fondo blanco */
+  --papel: #ffffff;
+  --tinta: #00774e;       /* verde de marca, un punto mas oscuro para que el texto se lea */
+  --cafe: #00774e;
+  --terracota: #009f6f;   /* el verde puro de la marca, para acentos */
+  --suave: #74a894;
+  --linea: #d7ebe1;
+  --linea-fuerte: #b5dbc9;
+
+  --rojo: #f7d2c6;
+  --rojo-t: #a32e12;
+  --rojo-b: #cf5330;
+  --amarillo: #fbeac2;
+  --amarillo-t: #7a5a12;
+  --amarillo-b: #d6a940;
+  --marron: #1d1d1b;      /* "no marcó": negro de marca */
+  --marron-t: #ffffff;
+  --ok: #009f6f;
+
+  font-family: "Didact Gothic", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+/* Con el fondo blanco hacen falta fondos propios donde antes iba el crema. */
+body.omuh .tb thead th,
+body.omuh .tb tr.sec td { background: #f1faf5; }
+body.omuh .cap { border-color: var(--linea); }
+body.omuh .zona:hover, body.omuh .zona.sobre { background: #f8fdfa; }
+body.omuh .rec.alerta { background: #f8fdfa; }
+body.omuh button:hover { background: #f1faf5; }
+body.omuh h1, body.omuh .cab h3, body.omuh .recs h2 { color: var(--terracota); }
+body.omuh h2, body.omuh h4,
+body.omuh .tb thead th, body.omuh .tb td.emp, body.omuh .tb td.pr, body.omuh .tb tr.sec td,
+body.omuh .nav a, body.omuh .chip, body.omuh button, body.omuh .zona strong {
+  font-family: "Didact Gothic", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+/* La marca es manuscrita: solo en los titulos, nunca en los datos. */
+body.omuh h1, body.omuh .cab h3 {
+  font-family: Schoolbell, "Didact Gothic", cursive;
+  letter-spacing: 0;
+}
+body.omuh h1 { font-size: 33px; }
+body.omuh .cab h3 { font-size: 24px; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font: 15px/1.5 Jost, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .tb thead th, .chip, button {
+  font-family: Oswald, "Jost", -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+/* navegacion entre los dos negocios */
+.nav {
+  display: flex;
+  gap: 2px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 16px 0;
+}
+.nav a {
+  font-family: Oswald, sans-serif;
+  font-size: 12px;
+  letter-spacing: .09em;
+  text-decoration: none;
+  color: var(--suave);
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+}
+.nav a:hover { color: var(--terracota); }
+.nav a.on {
+  color: var(--tinta);
+  background: var(--papel);
+  border-color: var(--linea);
+  border-bottom-color: var(--papel);
+}
+
+/* cabecera */
+.top {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 16px 10px;
+  border-bottom: 1px solid var(--linea);
+}
+/* Sin mayusculas forzadas: el titulo lleva el nombre del negocio (omuH). */
+.top h1 {
+  margin: 0 0 8px;
+  font-size: 29px;
+  text-transform: none;
+  letter-spacing: .04em;
+  color: var(--tinta);
+}
+.bajada { margin: 0; color: var(--cafe); opacity: .85; max-width: 62ch; font-size: 14px; }
+
+main { max-width: 1180px; margin: 0 auto; padding: 20px 16px; }
+footer { max-width: 1180px; margin: 0 auto; padding: 8px 16px 44px; color: var(--suave); font-size: 12.5px; }
+code { background: var(--linea); padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--cafe); }
+
+/* zona de carga */
+.zona {
+  border: 1.5px dashed var(--linea-fuerte);
+  border-radius: 3px;
+  background: var(--papel);
+  padding: 38px 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: border-color .15s, background .15s;
+}
+.zona:hover, .zona.sobre { border-color: var(--terracota); background: #fffdfa; }
+.zona strong {
+  font-family: Oswald, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--tinta);
+}
+.zona span { color: var(--suave); font-size: 13px; }
+
+.estado { margin: 16px 0 0; font-size: 14px; color: var(--suave); }
+.estado.bien { color: var(--cafe); }
+.estado.mal {
+  color: var(--rojo-t);
+  background: var(--rojo);
+  padding: 11px 13px;
+  border-radius: 3px;
+  border-left: 3px solid var(--rojo-b);
+}
+
+.barra { display: flex; gap: 14px; align-items: center; margin: 20px 0 4px; flex-wrap: wrap; }
+.barra label { font-size: 12px; color: var(--suave); text-transform: uppercase; letter-spacing: .07em; }
+select, button {
+  font: inherit;
+  font-size: 14px;
+  padding: 7px 12px;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: 3px;
+  background: var(--papel);
+  color: var(--tinta);
+  cursor: pointer;
+}
+button { text-transform: uppercase; font-size: 12px; letter-spacing: .07em; }
+button:hover { background: var(--crema); border-color: var(--terracota); color: var(--terracota); }
+.chip { padding: 5px 11px; font-size: 11.5px; }
+.chip.on { background: var(--tinta); color: var(--crema); border-color: var(--tinta); }
+.chip.on:hover { color: var(--crema); }
+
+.cargando { color: var(--suave); padding: 22px 0; font-style: italic; }
+
+/* area sin horario cargado */
+.cap.vacia { border-top-color: var(--linea-fuerte); background: #fcfcfb; }
+.cap.vacia .nada { margin: 6px 0 4px; font-size: 14px; }
+.cap.vacia p.gris { margin: 0; font-size: 13px; line-height: 1.6; }
+
+/* area */
+.area { margin: 30px 0 0; }
+.cap {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-top: 3px solid var(--terracota);
+  border-radius: 3px;
+  padding: 18px;
+}
+.cab { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+/* Sin mayusculas forzadas: el negocio se escribe omuH, no OMUH. */
+.cab h3 {
+  margin: 0;
+  font-size: 21px;
+  text-transform: none;
+  letter-spacing: .04em;
+  color: var(--tinta);
+}
+.per { color: var(--suave); font-size: 12.5px; }
+.acc { display: flex; align-items: center; gap: 10px; margin: 10px 0 0; font-size: 11.5px; }
+
+.ley { display: flex; flex-wrap: wrap; gap: 15px; font-size: 11.5px; color: var(--suave); margin-bottom: 12px; }
+.ley span { display: flex; align-items: center; gap: 6px; }
+.sw { width: 11px; height: 11px; border-radius: 2px; display: inline-block; border: 1px solid rgba(74, 46, 27, .14); }
+
+/* tabla */
+.tb { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+.tb th, .tb td {
+  border: 1px solid var(--linea);
+  padding: 6px 7px;
+  text-align: center;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.tb thead th {
+  background: var(--crema);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--cafe);
+  border-bottom: 1px solid var(--linea-fuerte);
+}
+.tb td.emp, .tb th.emp { text-align: left; font-weight: 500; }
+.tb td.emp { font-family: Oswald, sans-serif; letter-spacing: .01em; font-size: 13px; }
+.tb tr.sec td {
+  background: var(--crema);
+  text-align: left;
+  font-family: Oswald, sans-serif;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--terracota);
+}
+.tb td b { font-weight: 500; font-size: 13.5px; }
+.tb td .d { font-size: 11px; color: var(--suave); }
+.tb td .sal { font-size: 12px; }
+.tb td .prog { font-size: 10.5px; color: var(--suave); margin-top: 1px; }
+.tb td .sub { font-size: 10.5px; color: var(--suave); }
+.tb td.pr, .tb th.pr { font-weight: 500; font-family: Oswald, sans-serif; }
+.gris { color: var(--suave); }
+
+/* estados: atraso / una marca / no marco */
+td.rojo { background: var(--rojo); color: var(--rojo-t); }
+td.amarillo { background: var(--amarillo); color: var(--amarillo-t); }
+td.naranja { background: var(--marron); color: var(--marron-t); }
+td.rojo .prog, td.amarillo .prog, td.rojo .d, td.amarillo .d { color: inherit; opacity: .72; }
+td.naranja .prog, td.naranja .sub, td.naranja .d { color: var(--marron-t); opacity: .7; }
+.sw.rojo { background: var(--rojo); }
+.sw.amarillo { background: var(--amarillo); }
+.sw.naranja { background: var(--marron); }
+
+/* recomendaciones */
+.recs { margin: 38px 0 0; }
+.recs h2 {
+  font-size: 17px;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--tinta);
+}
+.rec {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--linea-fuerte);
+  border-radius: 3px;
+  padding: 13px 15px;
+  margin: 0 0 10px;
+}
+/* Sin mayusculas forzadas: estos titulos llevan el nombre del area (omuH). */
+.rec h4 { margin: 0 0 7px; font-size: 14px; text-transform: none; letter-spacing: .02em; }
+.rec p { margin: 4px 0; font-size: 13px; color: var(--suave); }
+.rec ul { margin: 5px 0 0; padding-left: 18px; font-size: 13px; color: var(--cafe); }
+.rec li { margin: 3px 0; }
+.rec.rojo-t { border-left-color: var(--rojo-b); }
+.rec.rojo-t h4 { color: var(--rojo-t); }
+.rec.amarillo-t { border-left-color: var(--amarillo-b); }
+.rec.amarillo-t h4 { color: var(--amarillo-t); }
+.rec.naranja-t { border-left-color: var(--marron); }
+.rec.naranja-t h4 { color: var(--marron); }
+.rec.alerta { border-left-color: var(--terracota); background: #fffdfa; }
+.rec.alerta h4 { color: var(--terracota); }
+.ok-t { color: var(--ok); }
+
+@media (max-width: 760px) {
+  .top h1 { font-size: 22px; }
+  .tb { font-size: 11px; }
+  .tb th, .tb td { padding: 4px; }
+  .tb td.emp { font-size: 11.5px; }
+}

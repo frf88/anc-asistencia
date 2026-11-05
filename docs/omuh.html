@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>omuH · Control de asistencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Schoolbell&display=swap">
+<link rel="stylesheet" href="loader.css">
+</head>
+<body class="omuh">
+
+<nav class="nav">
+  <a href="ancestral.html">Ancestral</a>
+  <a href="omuh.html" class="on">omuH</a>
+</nav>
+
+<header class="top">
+  <h1>omuH · Asistencia</h1>
+  <p class="bajada">Arrastrá el Excel del biométrico. Los horarios se bajan solos de la pestaña
+    del mes en el Google Sheet. El archivo no se sube a ningún servidor: se lee acá, en esta computadora.</p>
+</header>
+
+<main>
+  <div class="zona" id="zona">
+    <strong>Arrastrá acá el Reporte de Marcaciones</strong>
+    <span>o hacé clic para elegirlo · se pueden soltar varios a la vez</span>
+    <input type="file" id="archivo" accept=".xlsx,.xls" multiple hidden>
+  </div>
+
+  <p class="estado" id="estado"></p>
+
+  <div class="barra" id="barra" hidden>
+    <label>Semana <select id="semana"></select></label>
+    <button id="recargar">Volver a bajar los horarios</button>
+  </div>
+
+  <div id="areas"></div>
+</main>
+
+<footer>
+  <p>Grupo ANC · Para cambiar el personal o los ids del biométrico se edita <code>docs/js/datos.js</code>.</p>
+</footer>
+
+<script>window.SOLO_AREAS = ['omuh'];</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="js/datos.js"></script>
+<script src="js/lib.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
