@@ -44,6 +44,8 @@ window.DATOS = {
     { id: '38', area: 'servicio', nombre: 'Matias',    nota: 'contrato al 50%' },
     { id: '55', area: 'servicio', nombre: 'Oriana' },
     { id: '56', area: 'servicio', nombre: 'Adolfo',    alias: ['Adolfo Adriano'] },
+    { id: '13', area: 'servicio', nombre: 'Felisa' },
+    { id: '33', area: 'servicio', nombre: 'Gerardo' },
     { id: '43', area: 'servicio', nombre: 'Ale G',     alias: ['Alejandro Giovanni'] },
     { id: '12', area: 'servicio', nombre: 'Paola',     subarea: 'Bar' },
 
@@ -60,6 +62,7 @@ window.DATOS = {
     { id: '52', area: 'cocina', nombre: 'Fabricio' },
     { id: '53', area: 'cocina', nombre: 'José',      alias: ['Jose'] },
     { id: '54', area: 'cocina', nombre: 'Israel' },
+    { id: '15', area: 'cocina', nombre: 'Mauricio', alias: ['Mauricio Mendez', 'Mauricio Méndez'] },
 
     // ---- omuH ----
     { id: '25', area: 'omuh', nombre: 'Silvana' },
@@ -77,13 +80,10 @@ window.DATOS = {
     { id: '57', area: 'omuh', nombre: 'Carolina' },
   ],
 
-  // Marcan en el biometrico pero no aparecen en ninguna planilla de horarios.
-  // Si alguno entra al cuadro, moverlo arriba con su area.
-  sinArea: [
-    { id: '2',  nombre: 'Maya' },
-    { id: '13', nombre: 'Felisa' },
-    { id: '15', nombre: 'Mauricio' },
-    { id: '33', nombre: 'Gerardo' },
+  // Marcan en el biometrico pero su horario no se controla con esta pagina.
+  // No salen en la matriz ni en el aviso de "marcaron sin horario cargado".
+  sinControl: [
+    { id: '2', nombre: 'Maya', motivo: 'administración, se controla de otra forma' },
   ],
 
   // Ya no trabajan aca. Estan para no reasignar el id por error.

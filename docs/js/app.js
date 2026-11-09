@@ -275,6 +275,7 @@
       }
     }
     const idsEnHorario = new Set(ms.flatMap((m) => m.filas.map((fl) => fl.id)));
+    (D.sinControl || []).forEach((e) => idsEnHorario.add(e.id));
     const fechas = [0, 1, 2, 3, 4, 5, 6].map((i) => L.sumarDias(semanaElegida, i));
     const marcaronSinHorario = Object.values(bio.empleados)
       .filter((e) => !idsEnHorario.has(e.id) && fechas.some((f) => (e.dias[f] || { marcas: [] }).marcas.length))
