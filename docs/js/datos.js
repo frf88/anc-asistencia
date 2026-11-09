@@ -43,6 +43,7 @@ window.DATOS = {
     { id: '30', area: 'servicio', nombre: 'Alejandro' },
     { id: '38', area: 'servicio', nombre: 'Matias',    nota: 'contrato al 50%' },
     { id: '55', area: 'servicio', nombre: 'Oriana' },
+    { id: '56', area: 'servicio', nombre: 'Adolfo',    alias: ['Adolfo Adriano'] },
     { id: '43', area: 'servicio', nombre: 'Ale G',     alias: ['Alejandro Giovanni'] },
     { id: '12', area: 'servicio', nombre: 'Paola',     subarea: 'Bar' },
 
@@ -73,6 +74,16 @@ window.DATOS = {
     { id: '6',  area: 'omuh', nombre: 'Marcela' },
     { id: '44', area: 'omuh', nombre: 'Hugo',      alias: ['Hugo David'] },
     { id: '35', area: 'omuh', nombre: 'Jonathan' },
+    { id: '57', area: 'omuh', nombre: 'Carolina' },
+  ],
+
+  // Marcan en el biometrico pero no aparecen en ninguna planilla de horarios.
+  // Si alguno entra al cuadro, moverlo arriba con su area.
+  sinArea: [
+    { id: '2',  nombre: 'Maya' },
+    { id: '13', nombre: 'Felisa' },
+    { id: '15', nombre: 'Mauricio' },
+    { id: '33', nombre: 'Gerardo' },
   ],
 
   // Ya no trabajan aca. Estan para no reasignar el id por error.
