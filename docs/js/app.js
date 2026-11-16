@@ -49,7 +49,9 @@
     return { madrugada, resto, entradas };
   }
 
-  function evaluar(prog, dia, fecha, corte) {
+  // trasnoche = marcas de madrugada del dia SIGUIENTE. Toda marca antes de las 04:00
+  // cuenta como el dia anterior, asi que son la salida de este dia.
+  function evaluar(prog, dia, fecha, corte, trasnoche) {
     const s = separar(dia);
     const notas = s.madrugada.length ? [s.madrugada[0] + ' es la salida del día anterior'] : [];
 
@@ -66,15 +68,19 @@
       || (fecha === corte.fecha && L.aMin(prog.entrada) > L.aMin(corte.hora));
     if (pasoCorte) return { tipo: 'sd', prog: prog.entrada, notas };
 
-    const n = s.resto.length;
+    // La marca de madrugada del dia siguiente es la salida de este dia.
+    const noct = (trasnoche && trasnoche.length) ? trasnoche[trasnoche.length - 1] : null;
+    const n = s.resto.length + (noct ? 1 : 0);
     if (n === 0) return { tipo: 'sin_marcar', prog: prog.entrada, cortado: prog.cortado, notas };
 
-    const entrada = s.resto[0];
-    const salida = n > 1 ? s.resto[n - 1] : null;
-    const delta = L.aMin(entrada) - L.aMin(prog.entrada);
-    const tarde = delta >= R.toleranciaAtrasoMin;
+    const entrada = s.resto.length ? s.resto[0] : null;
+    const salida = noct || (s.resto.length > 1 ? s.resto[s.resto.length - 1] : null);
+    if (noct) notas.push('salió ' + noct + ' de la madrugada siguiente');
+    const delta = entrada ? L.aMin(entrada) - L.aMin(prog.entrada) : null;
+    const tarde = delta !== null && delta >= R.toleranciaAtrasoMin;
     let antes = null;
-    if (salida && prog.salida) {
+    // Si salio de madrugada nunca se fue antes: trabajo pasada la hora de cierre.
+    if (salida && !noct && prog.salida) {
       const d = L.aMin(prog.salida) - L.aMin(salida);
       if (d >= R.salidaAnticipadaMin) antes = d;
     }
@@ -87,6 +93,7 @@
       cortado: prog.cortado,
       entrada,
       salida,
+      nocturna: !!noct,
       delta,
       antes,
       notas,
@@ -167,17 +174,16 @@
         continue;
       }
       const dias = (bio.empleados[id] || {}).dias || {};
+      // Toda marca antes de las 04:00 pertenece al dia anterior: se la pasamos a ese dia.
+      const umbral = R.umbralSalidaMadrugadaHora * 60;
+      const madrugadaDe = (iso) => ((dias[iso] || {}).marcas || [])
+        .filter((t) => L.aMin(t) < umbral).sort();
+
       const celdas = fila.celdas.map((prog, i) => {
         if (prog && prog.corregida) corregidas += 1;
         return Object.assign({ fecha: fechas[i] },
-          evaluar(prog, dias[fechas[i]] || { marcas: [], entradas: null }, fechas[i], bio.corte));
-      });
-
-      // La marca de madrugada del dia i es la salida del dia i-1.
-      celdas.forEach((c, i) => {
-        if (i > 0 && c.notas.some((n) => n.indexOf('salida del día anterior') >= 0)) {
-          celdas[i - 1].notas.push('salió pasada la medianoche');
-        }
+          evaluar(prog, dias[fechas[i]] || { marcas: [], entradas: null }, fechas[i], bio.corte,
+            madrugadaDe(L.sumarDias(fechas[i], 1))));
       });
 
       const cuentan = celdas.filter((c) => CUENTAN.indexOf(c.tipo) >= 0);
@@ -214,8 +220,10 @@
     else if (c.tipo === 'sin_marcar') cuerpo = '<b>sin marcar</b><div class="prog">' + c.prog + '</div>';
     else {
       const d = c.delta > 0 ? '+' + c.delta : String(c.delta);
-      cuerpo = '<b>' + c.entrada + '</b> <span class="d">' + d + '</span>'
-        + '<div class="sal">' + (c.salida ? c.salida : '— sin salida') + '</div>'
+      cuerpo = (c.entrada
+        ? '<b>' + c.entrada + '</b> <span class="d">' + d + '</span>'
+        : '<b>— sin entrada</b>')
+        + '<div class="sal">' + (c.salida ? c.salida + (c.nocturna ? ' +1' : '') : '— sin salida') + '</div>'
         + '<div class="prog">' + c.prog + (c.cortado ? ' ·' : '') + '</div>';
     }
     return '<td class="' + cls + '"' + tit + '>' + cuerpo + '</td>';
@@ -257,7 +265,11 @@
           const et = fl.nombre + ' (' + m.titulo + ') ' + DIA_CORTO[i];
           if (c.tipo === 'tarde') tarde.push(et + ': entró ' + c.entrada + ', +' + c.delta + ' min sobre ' + c.prog);
           if (c.tipo === 'sin_marcar') sinMarcar.push(et + ': no marcó, le tocaba ' + c.prog);
-          if (c.tipo === 'una_marca') unaMarca.push(et + ': una sola marca (' + c.entrada + '), falta la salida');
+          if (c.tipo === 'una_marca') {
+            unaMarca.push(c.entrada
+              ? et + ': una sola marca (' + c.entrada + '), falta la salida'
+              : et + ': solo marcó la salida (' + c.salida + ' de la madrugada), falta la entrada');
+          }
           if (c.tipo === 'libre_marco') libreMarco.push(et + ': marcó ' + c.marca + ' en día libre');
           if (c.antes) antes.push(et + ': salió ' + c.salida + ', ' + c.antes + ' min antes de ' + c.progSalida);
         });
