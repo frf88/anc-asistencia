@@ -223,7 +223,7 @@
       cuerpo = (c.entrada
         ? '<b>' + c.entrada + '</b> <span class="d">' + d + '</span>'
         : '<b>— sin entrada</b>')
-        + '<div class="sal">' + (c.salida ? c.salida + (c.nocturna ? ' +1' : '') : '— sin salida') + '</div>'
+        + '<div class="sal">' + (c.salida ? c.salida : '— sin salida') + '</div>'
         + '<div class="prog">' + c.prog + (c.cortado ? ' ·' : '') + '</div>';
     }
     return '<td class="' + cls + '"' + tit + '>' + cuerpo + '</td>';
