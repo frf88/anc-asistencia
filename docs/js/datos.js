@@ -78,6 +78,7 @@ window.DATOS = {
     { id: '44', area: 'omuh', nombre: 'Hugo',      alias: ['Hugo David'] },
     { id: '35', area: 'omuh', nombre: 'Jonathan' },
     { id: '57', area: 'omuh', nombre: 'Carolina' },
+    { id: '58', area: 'omuh', nombre: 'Noelia',    alias: ['Noelia López', 'Noelia Lopez'] },
   ],
 
   // Marcan en el biometrico pero su horario no se controla con esta pagina.
